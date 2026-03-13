@@ -65,7 +65,8 @@ export class EmailCopyAgent extends AIChatAgent<Env, EmailCopyState> {
     const registry = createRegistry(this.env);
     const modelMessages = await convertToModelMessages(this.messages);
 
-    const dataStreamResponse = await streamText({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- AI SDK generics hit TS2589 depth limit with complex tool schemas
+    const dataStreamResponse = await (streamText as any)({
       model: registry.languageModel(MODEL_CONFIG.orchestrator),
       system: ORCHESTRATOR_PROMPT,
       messages: modelMessages,
