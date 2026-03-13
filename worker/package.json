@@ -1,0 +1,21 @@
+{
+  "name": "agent-kanban-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.58",
+    "@cloudflare/ai-chat": "^0.1.8",
+    "agents": "^0.7.6",
+    "ai": "^6.0.116",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250312.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.72.0"
+  }
+}

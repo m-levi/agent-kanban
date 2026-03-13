@@ -1,0 +1,23 @@
+{
+  "name": "agent-kanban-worker",
+  "account_id": "59d9f2e1a63da20ee1d166a0e05f417c",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-03-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "EMAIL_COPY_AGENT",
+        "class_name": "EmailCopyAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["EmailCopyAgent"]
+    }
+  ]
+  // Secret (set via `wrangler secret put`):
+  // - ANTHROPIC_API_KEY
+}

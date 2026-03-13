@@ -1,0 +1,12 @@
+{
+  "name": "agent-kanban",
+  "private": true,
+  "workspaces": ["web", "worker"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w worker\" \"npm run dev -w web\"",
+    "deploy": "npm run deploy -w worker && npm run deploy -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
